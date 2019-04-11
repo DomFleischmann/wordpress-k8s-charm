@@ -1,0 +1,4 @@
+includes:
+- "layer:caas-base"
+- "layer:docker-resource"
+- "interface:mysql"

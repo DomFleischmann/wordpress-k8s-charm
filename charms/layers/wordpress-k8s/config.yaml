@@ -1,0 +1,9 @@
+options:
+  advertised-hostname:
+    description: Wordpress hostname
+    type: string
+    default: "wordpress"
+  advertised-port:
+    description: Wordpress port
+    type: int
+    default: 80

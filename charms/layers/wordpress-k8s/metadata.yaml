@@ -1,0 +1,18 @@
+name: "wordpress-k8s"
+summary: "Wordpress Kubernetes Charm"
+maintainers:
+- "Dominik Fleischmann <dominik.fleischmann@canonical.com>"
+description: |
+  A CAAS charm to deploy Wordpress
+tags:
+- "application"
+series:
+- "kubernetes"
+requires:
+  wordpressdb:
+    interface: mysql
+resources:
+  wordpress-image:
+    type: oci-image
+    description: "Image used for Wordpress pod"
+    auto-fetch: true

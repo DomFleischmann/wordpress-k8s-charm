@@ -1,0 +1,22 @@
+bundle: kubernetes
+applications:
+  wordpress-k8s:
+    charm: './builds/wordpress-k8s'
+    num_units: 1
+    resources:
+      wordpress-image: './resources/wordpress-image.yaml'
+  wordpressdb:
+    charm: './builds/mariadb-k8s'
+    num_units: 1
+    options:
+      database: wordpress
+      user: wp
+      password: wppass
+    series: kubernetes
+    resources:
+      mysql-image: './resources/mysql-image.yaml'
+    storage:
+      database: 50M, mariadb-pv
+relations:
+  - - 'wordpress-k8s:wordpressdb'
+    - 'wordpressdb:server'
